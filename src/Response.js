@@ -3,6 +3,7 @@ const { Format, Types } = require('./Constants');
 
 class Item {
   constructor(type, description, selector, { host, port }) {
+    if (type in Types) type = Types[type];
     this.type = type;
     this.description = description || '';
     this.selector = selector || '';
